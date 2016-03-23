@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
 body {
   background: url('/assets/sos.png');
   font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
@@ -5,9 +7,14 @@ body {
 
 .navbar.navbar-inverse {
   background: url('/assets/footer_lodyas.png');
-  color: white;
   border-radius: 0;
   box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #FFC82B;
+  font-family: 'Lato', sans-serif;
 }
 
 .booyah-box {

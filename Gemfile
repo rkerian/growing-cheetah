@@ -54,3 +54,6 @@ gem 'sass-rails'
 
 # Use Kaminari for pagination
 gem 'kaminari', '~> 0.16.1'
+
+#Use Simple Form gem for forms
+gem 'simple_form'

@@ -51,3 +51,6 @@ gem 'rails_12factor', group: :production
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'sprockets', '2.11.0'
 gem 'sass-rails'
+
+# Use Kaminari for pagination
+gem 'kaminari', '~> 0.16.1'

@@ -60,3 +60,9 @@ gem 'simple_form'
 
 #Use Devise for authentication, even though Devise recommends learning from scratch
 gem 'devise'
+
+#Use geocoder for address geolocation
+gem 'geocoder'
+
+#Use figaro for safety and stuff
+gem 'figaro', '>=1.0.0'

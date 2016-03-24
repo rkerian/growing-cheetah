@@ -57,3 +57,6 @@ gem 'kaminari', '~> 0.16.1'
 
 #Use Simple Form gem for forms
 gem 'simple_form'
+
+#Use Devise for authentication, even though Devise recommends learning from scratch
+gem 'devise'

@@ -92,3 +92,25 @@ blockquote p {
 .general {
   font-family: 'Lato', sans-serif;
 }
+
+.img {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+.img:hover {
+  border: 1px solid #777;
+}
+
+.img img {
+  width: 100%;
+  height: auto;
+}
+
+.imgdesc {
+  font-family: 'Lato', sans-serif;
+  padding: 15px;
+  text-align: center;
+}

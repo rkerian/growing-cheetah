@@ -41,6 +41,61 @@
 
 <div class="clear"></div>
 
+
+<div class="col-xs-10 col-xs-offset-1">
+  <h1 class="pull-left general">Photos</h1>
+  <!-- Button trigger modal -->
+  &nbsp; &nbsp;
+  <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#PhotoModal">
+  Add a photo
+  </button>
+</div>
+
+<div class="clear"></div>
+
+<div class="row col-xs-offset-1">
+<% @place.photos.each do |photo| %>
+    <div class="col-xs-3">
+      <a href="#" class="thumbnail img-responsive">
+        <%= image_tag photo.picture %>
+      </a>
+      <div class="general"><%= photo.photo_description %></div>
+    </div>
+<% end %>
+</div>
+
+
+<br />
+
+<div class="clear"></div>
+
+<!-- Modal -->
+<div class="modal fade" id="PhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Add a photo</h4>
+      </div>
+      <div class="modal-body">
+      <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+        <%= f.input :picture %>
+        <%= f.input :photo_description %>
+        <!-- need to upload a photo from carrier wave -->  
+      </div>
+      <div class="modal-footer">
+        <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="clear"></div>
+<div class="clear"></div>
+<div class="clear"></div>
+
 <div class="col-xs-10 col-xs-offset-1">
 <h1 class="pull-left general">Comments</h1>
 <!-- Button trigger modal -->
@@ -76,49 +131,8 @@
   </div>
 </div>
 
-<div class="col-xs-10 col-xs-offset-1">
-<h1 class="pull-left general">Photos</h1>
-<!-- Button trigger modal -->
-&nbsp; &nbsp;
-<button class="btn btn-primary btn-md" data-toggle="modal" data-target="#PhotoModal">
-  Add a photo
-</button>
-</div>
-
-<div class="clear"></div>
-
-<!-- Modal -->
-<div class="modal fade" id="PhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Add a photo</h4>
-      </div>
-      <div class="modal-body">
-      <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-        <%= f.input :picture %>
-        <%= f.input :photo_description %>
-        <!-- need to upload a photo from carrier wave -->  
-      </div>
-      <div class="modal-footer">
-        <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    <% end %>
-    </div>
-  </div>
-</div>
-
-<% @place.photos.each do |photo| %>
-<div class="col-xs=12 col-sm-6">
-  <%= image_tag photo.picture %>
-  <%= photo.photo_description %>
-  <% end %>
-
-
 <% @place.comments.each do |comment| %>
-<div class="col-xs-12 col-sm-6">
+<div class="col-xs-12 col-xs-offset-1 col-sm-6 col-sm-offset-1">
   <div>
     <blockquote>
       <% if comment.humanized_rating.present? %>
@@ -130,5 +144,3 @@
   </div>
 </div>
 <% end %>
-
-

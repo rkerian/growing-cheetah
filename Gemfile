@@ -69,3 +69,6 @@ gem 'figaro', '>=1.0.0'
 
 #Use carrierwave for image upload
 gem 'carrierwave'
+
+#carrierwave Fog
+gem 'fog', '~> 1.3.1'
